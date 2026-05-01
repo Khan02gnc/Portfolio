@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Match — 30 Levels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app" style="position:relative">
+  <div id="auth">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">🃏</div>
+        <h1>Memory Match</h1>
+        <p>30 levels of brain-busting fun!</p>
+      </div>
+      <div class="auth-tabs">
+        <div class="auth-tab active" onclick="switchTab('login')">Sign In</div>
+        <div class="auth-tab" onclick="switchTab('register')">Register</div>
+      </div>
+      <div id="login-form">
+        <div class="form-group"><label>Username</label><div class="input-wrap"><input type="text" id="lu" placeholder="Enter username" /></div></div>
+        <div class="form-group"><label>Password</label><div class="input-wrap"><input type="password" id="lp" placeholder="Enter password" maxlength="6" /><button class="show-btn" onclick="togglePw('lp', this)">👁</button></div><div class="hint">Max 6 characters</div></div>
+        <div class="amsg" id="lmsg"></div>
+        <button class="btn-pri" onclick="doLogin()">Sign In</button>
+      </div>
+      <div id="register-form" style="display:none">
+        <div class="form-group"><label>Username</label><div class="input-wrap"><input type="text" id="ru" placeholder="Choose username" /></div></div>
+        <div class="form-group"><label>Password</label><div class="input-wrap"><input type="password" id="rp" placeholder="Max 6 characters" maxlength="6" oninput="pwStrength(this.value)" /><button class="show-btn" onclick="togglePw('rp', this)">👁</button></div><div class="hint" id="pwhint">Max 6 characters</div></div>
+        <div class="form-group"><label>Confirm Password</label><div class="input-wrap"><input type="password" id="rp2" placeholder="Repeat password" maxlength="6" /><button class="show-btn" onclick="togglePw('rp2', this)">👁</button></div></div>
+        <div class="amsg" id="rmsg"></div>
+        <button class="btn-pri" onclick="doRegister()">Create Account</button>
+      </div>
+    </div>
+  </div>
+  <div id="lvlsel">
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:10px"><span class="brand">🃏 Memory Match</span><span class="uname" id="ls-uname"></span></div>
+      <button class="btn-sm" onclick="logout()">Log Out</button>
+    </div>
+    <div class="diff-tabs">
+      <div class="diff-tab easy active" onclick="showDiff('easy', this)">Easy</div>
+      <div class="diff-tab med" onclick="showDiff('med', this)">Medium</div>
+      <div class="diff-tab hard" onclick="showDiff('hard', this)">Hard</div>
+    </div>
+    <div id="diff-info"></div>
+    <div class="lvl-grid" id="lvl-grid"></div>
+  </div>
+  <div id="game">
+    <div class="game-hdr">
+      <div class="hdr-left"><span class="brand">🃏 Memory Match</span></div>
+      <div class="hdr-stats">
+        <div class="stat-pill"><span>Moves:</span> <span id="g-moves">0</span></div>
+        <div class="stat-pill"><span>Limit:</span> <span id="g-limit">-</span></div>
+        <div class="stat-pill"><span>Pairs:</span> <span id="g-pairs">0/0</span></div>
+        <div class="stat-pill"><span>Time:</span> <span id="g-time">0s</span></div>
+        <button class="btn-sm" onclick="goLevels()">Levels</button>
+        <button class="btn-sm" onclick="restartLevel()">Restart</button>
+      </div>
+    </div>
+    <div class="lvl-bar">
+      <div class="lvl-bar-l"><span class="lvl-tag" id="g-diff-tag">Easy</span><span class="lvl-title" id="g-lvl-title">Level 1</span></div>
+      <span class="move-limit" id="g-star-hint"></span>
+    </div>
+    <div class="prog-wrap">
+      <div class="prog-bar-bg"><div class="prog-bar-fg" id="prog-bar" style="width:0%"></div></div>
+      <span class="prog-label" id="prog-label">0 / 0 pairs</span>
+    </div>
+    <div class="board-wrap"><div id="board"></div></div>
+  </div>
+  <div class="overlay" id="win-ov">
+    <div class="ov-card">
+      <div class="ov-icon">🎉</div><div class="ov-title">Level Clear!</div>
+      <div class="ov-sub" id="wov-sub"></div><div class="star-row" id="wov-stars"></div>
+      <div class="ov-stats">
+        <div class="ov-stat"><div class="ov-stat-v" id="wov-moves"></div><div class="ov-stat-l">Moves</div></div>
+        <div class="ov-stat"><div class="ov-stat-v" id="wov-time"></div><div class="ov-stat-l">Seconds</div></div>
+        <div class="ov-stat"><div class="ov-stat-v" id="wov-stars2"></div><div class="ov-stat-l">Stars</div></div>
+      </div>
+      <div class="ov-btns">
+        <button class="btn-pri" id="wov-next" onclick="nextLevel()">Next Level</button>
+        <button class="btn-sec" onclick="restartLevel(); hideOv('win-ov')">Retry</button>
+        <button class="btn-sec" onclick="goLevels(); hideOv('win-ov')">Level Select</button>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" id="fail-ov">
+    <div class="ov-card">
+      <div class="ov-icon">💔</div><div class="ov-title">Out of Moves!</div>
+      <div class="ov-sub" id="fov-sub"></div>
+      <div class="ov-btns" style="margin-top:1.5rem">
+        <button class="btn-pri" onclick="restartLevel(); hideOv('fail-ov')">Try Again</button>
+        <button class="btn-sec" onclick="goLevels(); hideOv('fail-ov')">Level Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
