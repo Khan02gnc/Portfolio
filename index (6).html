@@ -714,112 +714,6 @@ nav {
   transform: translateX(4px);
 }
 
-/* ── CONTACT FORM ──────────────────────────────── */
-.contact-form-wrap {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 24px;
-  padding: 36px;
-  margin-top: 40px;
-}
-.contact-form-title {
-  font-family: 'Fraunces', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 6px;
-}
-.contact-form-sub {
-  font-size: 13px;
-  color: rgba(250,247,242,0.45);
-  margin-bottom: 28px;
-}
-.cf-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-.cf-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-.cf-group label {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(250,247,242,0.5);
-}
-.cf-group input,
-.cf-group textarea,
-.cf-group select {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--cream);
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  width: 100%;
-}
-.cf-group input::placeholder,
-.cf-group textarea::placeholder {
-  color: rgba(250,247,242,0.25);
-}
-.cf-group input:focus,
-.cf-group textarea:focus {
-  border-color: rgba(232,147,58,0.6);
-  background: rgba(255,255,255,0.1);
-}
-.cf-group textarea {
-  resize: vertical;
-  min-height: 120px;
-  line-height: 1.6;
-}
-.cf-group select option {
-  background: var(--brown);
-  color: var(--cream);
-}
-.cf-submit {
-  width: 100%;
-  padding: 16px 28px;
-  background: var(--amber);
-  color: var(--brown);
-  font-size: 15px;
-  font-weight: 700;
-  font-family: 'DM Sans', sans-serif;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 8px;
-}
-.cf-submit:hover {
-  background: var(--amber-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232,147,58,0.3);
-}
-.cf-submit:active { transform: translateY(0); }
-.cf-note {
-  text-align: center;
-  font-size: 11px;
-  color: rgba(250,247,242,0.3);
-  margin-top: 14px;
-}
-@media (max-width: 600px) {
-  .cf-row { grid-template-columns: 1fr; }
-  .contact-form-wrap { padding: 24px; }
-}
-
 /* ── FOOTER ────────────────────────────────────── */
 footer {
   background: #1a0c06;
@@ -1325,62 +1219,32 @@ footer {
       <div class="reveal reveal-d1">
         <div class="contact-tagline">Open to new opportunities and connections.</div>
         <p class="contact-desc">Whether it's a project, a collaboration, or just a conversation — I'm always happy to hear from you.</p>
-        <div class="contact-links">
-          <a href="mailto:lester.khan02@gmail.com" class="contact-link">
-            <div class="contact-link-icon">✉</div>
-            <div class="contact-link-info">
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-val">lester.khan02@gmail.com</div>
-            </div>
-            <div class="contact-link-arrow">→</div>
-          </a>
-          <a href="tel:+63900000000" class="contact-link">
-            <div class="contact-link-icon">☎</div>
-            <div class="contact-link-info">
-              <div class="contact-link-label">Phone</div>
-              <div class="contact-link-val">+63 900 000 0000</div>
-            </div>
-            <div class="contact-link-arrow">→</div>
-          </a>
-          <a href="#" class="contact-link">
-            <div class="contact-link-icon">📍</div>
-            <div class="contact-link-info">
-              <div class="contact-link-label">Location</div>
-              <div class="contact-link-val">Philippines</div>
-            </div>
-            <div class="contact-link-arrow">→</div>
-          </a>
-        </div>
       </div>
-
-      <!-- Contact Form -->
-      <div class="reveal reveal-d2">
-        <div class="contact-form-wrap">
-          <div class="contact-form-title">Send me a message</div>
-          <div class="contact-form-sub">Fill out the form and it'll open your Gmail — ready to send.</div>
-          <div class="cf-row">
-            <div class="cf-group">
-              <label for="cf-name">Your Name</label>
-              <input type="text" id="cf-name" placeholder="Juan dela Cruz" />
-            </div>
-            <div class="cf-group">
-              <label for="cf-email">Your Email</label>
-              <input type="email" id="cf-email" placeholder="you@email.com" />
-            </div>
+      <div class="contact-links reveal reveal-d2">
+        <a href="mailto:lesterkhan@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-val">lesterkhan@gmail.com</div>
           </div>
-          <div class="cf-group">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" placeholder="Project Collaboration, Inquiry..." />
+          <div class="contact-link-arrow">→</div>
+        </a>
+        <a href="tel:+63900000000" class="contact-link">
+          <div class="contact-link-icon">☎</div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">Phone</div>
+            <div class="contact-link-val">+63 900 000 0000</div>
           </div>
-          <div class="cf-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" placeholder="Hi Lester, I'd love to connect about..."></textarea>
+          <div class="contact-link-arrow">→</div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="contact-link-icon">📍</div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">Location</div>
+            <div class="contact-link-val">Philippines</div>
           </div>
-          <button class="cf-submit" onclick="sendContactForm()">
-            <span>✉</span> Send via Gmail
-          </button>
-          <p class="cf-note">Clicking "Send via Gmail" will open your Gmail compose window with your message pre-filled.</p>
-        </div>
+          <div class="contact-link-arrow">→</div>
+        </a>
       </div>
     </div>
   </div>
@@ -1393,26 +1257,6 @@ footer {
 </footer>
 
 <script>
-// ── CONTACT FORM → GMAIL ──────────────────────────
-function sendContactForm() {
-  const name    = document.getElementById('cf-name').value.trim();
-  const email   = document.getElementById('cf-email').value.trim();
-  const subject = document.getElementById('cf-subject').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
-
-  if (!name || !message) {
-    alert('Please fill in at least your name and message.');
-    return;
-  }
-
-  const to = 'lester.khan02@gmail.com';
-  const fullSubject = subject || `Portfolio Inquiry from ${name}`;
-  const body = `Hi Lester,\n\n${message}\n\n---\nSent by: ${name}${email ? '\nReply-to: ' + email : ''}`;
-
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
-  window.open(gmailUrl, '_blank');
-}
-
 // ── MOBILE MENU ───────────────────────────────────
 function toggleMobileMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
