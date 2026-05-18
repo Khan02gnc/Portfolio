@@ -485,6 +485,9 @@ nav {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: var(--shadow);
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .proj-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .proj-thumb {
@@ -1051,7 +1054,7 @@ footer {
     <div class="proj-grid">
 
       <!-- Memory Match -->
-      <div class="proj-card reveal" onclick="openGame()">
+      <a class="proj-card reveal" href="javascript:void(0)" onclick="openGame(); return false;">
         <div class="proj-thumb" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);">
           <div class="proj-emoji-grid">
             <span>🦊</span><span>🐼</span><span>🦁</span><span>🐸</span>
@@ -1069,10 +1072,10 @@ footer {
           <p class="proj-desc">A browser-based memory card game with 30 levels across 3 difficulties, user accounts, star ratings, and move limits.</p>
           <div class="proj-cta">Click to Play →</div>
         </div>
-      </div>
+      </a>
 
       <!-- Hospital Management -->
-      <div class="proj-card reveal reveal-d1" onclick="window.open('https://www.figma.com/design/JDR5q5xIM5zdjkVoJ2cvzm/HOSPITAL-MANAGEMENT-SYSTEM?node-id=0-1&p=f&t=OVufHEEtc6NnN7BG-0','_blank')">
+      <a class="proj-card reveal reveal-d1" href="https://www.figma.com/design/JDR5q5xIM5zdjkVoJ2cvzm/HOSPITAL-MANAGEMENT-SYSTEM?node-id=0-1&p=f&t=OVufHEEtc6NnN7BG-0" target="_blank" rel="noopener noreferrer">
         <div class="proj-thumb" style="background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);">
           <div class="proj-emoji-grid">
             <span style="border-color:rgba(99,179,237,0.3);background:rgba(99,179,237,0.1)">🏥</span>
@@ -1096,10 +1099,10 @@ footer {
           <p class="proj-desc">A comprehensive UI/UX design for a hospital management system — covering patient records, scheduling, and clinical workflows.</p>
           <div class="proj-cta">View in Figma →</div>
         </div>
-      </div>
+      </a>
 
       <!-- MedSystem G3 -->
-      <div class="proj-card reveal reveal-d2" onclick="window.open('https://medsystemg3.infinityfreeapp.com/login.php','_blank')">
+      <a class="proj-card reveal reveal-d2" href="https://medsystemg3.infinityfreeapp.com/login.php" target="_blank" rel="noopener noreferrer">
         <div class="proj-thumb" style="background: linear-gradient(135deg, #0d2137 0%, #134e6f 50%, #1a7a6e 100%);">
           <div class="proj-emoji-grid">
             <span style="border-color:rgba(79,179,160,0.3);background:rgba(79,179,160,0.1)">🏥</span>
@@ -1123,10 +1126,10 @@ footer {
           <p class="proj-desc">A web-based medical management system featuring secure login, patient records, and clinical workflow tools built with PHP and MySQL.</p>
           <div class="proj-cta">View Live System →</div>
         </div>
-      </div>
+      </a>
 
       <!-- TAJAM Project -->
-      <div class="proj-card reveal reveal-d3" onclick="window.open('https://lesterkhansinque.netlify.app/','_blank')">
+      <a class="proj-card reveal reveal-d3" href="https://lesterkhansinque.netlify.app/" target="_blank" rel="noopener noreferrer">
         <div class="proj-thumb" style="background: linear-gradient(135deg, #431407 0%, #7c2d12 100%);">
           <div class="proj-emoji-grid">
             <span style="border-color:rgba(251,146,60,0.3);background:rgba(251,146,60,0.1)">🚀</span>
@@ -1150,7 +1153,7 @@ footer {
           <p class="proj-desc">A midterm UI/UX project under the TAJAM theme — exploring bold visual design and user-centered interface concepts.</p>
           <div class="proj-cta">View on Netlify →</div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
