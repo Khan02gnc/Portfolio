@@ -27,16 +27,16 @@ const LEVELS = {
     { pairs: 10, cols: 5, rows: 4, limit: 30, s3: 17, s2: 24 },
   ],
   med: [
-    { pairs:  8, cols: 4, rows: 4, limit: 20, s3: 12, s2: 16 },
-    { pairs:  9, cols: 6, rows: 3, limit: 22, s3: 13, s2: 17 },
-    { pairs: 10, cols: 5, rows: 4, limit: 24, s3: 14, s2: 19 },
-    { pairs: 10, cols: 5, rows: 4, limit: 26, s3: 15, s2: 21 },
-    { pairs: 12, cols: 6, rows: 4, limit: 28, s3: 17, s2: 23 },
-    { pairs: 12, cols: 6, rows: 4, limit: 30, s3: 18, s2: 25 },
-    { pairs: 14, cols: 7, rows: 4, limit: 34, s3: 20, s2: 27 },
-    { pairs: 15, cols: 6, rows: 5, limit: 36, s3: 22, s2: 29 },
-    { pairs: 16, cols: 8, rows: 4, limit: 38, s3: 24, s2: 31 },
-    { pairs: 18, cols: 6, rows: 6, limit: 42, s3: 26, s2: 34 },
+    { pairs:  8, cols: 4, rows: 4, limit: 40, s3: 15, s2: 22 },
+    { pairs:  9, cols: 6, rows: 3, limit: 42, s3: 16, s2: 24 },
+    { pairs: 10, cols: 5, rows: 4, limit: 44, s3: 18, s2: 26 },
+    { pairs: 10, cols: 5, rows: 4, limit: 46, s3: 19, s2: 28 },
+    { pairs: 12, cols: 6, rows: 4, limit: 50, s3: 21, s2: 31 },
+    { pairs: 12, cols: 6, rows: 4, limit: 52, s3: 22, s2: 33 },
+    { pairs: 14, cols: 7, rows: 4, limit: 56, s3: 24, s2: 36 },
+    { pairs: 15, cols: 6, rows: 5, limit: 58, s3: 26, s2: 38 },
+    { pairs: 16, cols: 8, rows: 4, limit: 60, s3: 28, s2: 40 },
+    { pairs: 18, cols: 6, rows: 6, limit: 66, s3: 30, s2: 44 },
   ],
   hard: [
     { pairs: 10, cols:  5, rows: 4, limit: 22, s3: 14, s2: 18 },
@@ -54,7 +54,7 @@ const LEVELS = {
 
 const DIFF_INFO = {
   easy: { label: 'Easy',   cls: 'easy', desc: 'Small grids · Perfect for warming up' },
-  med:  { label: 'Medium', cls: 'med',  desc: 'Bigger grids · More pairs to match'   },
+  med:  { label: 'Medium', cls: 'med',  desc: 'Bigger grids · Limited moves!'         },
   hard: { label: 'Hard',   cls: 'hard', desc: 'Large grids · Limited moves!'         },
 };
 
